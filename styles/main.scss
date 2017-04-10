@@ -133,6 +133,10 @@ ui-view{
   color: white;
   border-radius: 1em;
   position: relative;
+
+  button{
+    cursor: pointer;
+  }
 }
 
 [ui-sref]{

@@ -11,5 +11,4 @@ angular.module("RPC").controller("sellingController", function($scope, mainServi
     mainService.moveToSold(item, ebayFees, shippingFees, otherFees, soldPrice);
   }
 
-  $scope.status = mainService.status;
 })
