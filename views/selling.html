@@ -31,7 +31,7 @@
     <button class="sold-button" ng-click="soldItem(item, ebayFees, shippingFees, otherFees, soldPrice)">SOLD</button>
   </div>
 </div>
-<div class="sellingTotal">
+<div class="sellingTotal" ng-show="status">
   <p class="itemID">ID Number:</p>
   <input ng-model="idInput" type="text" placeholder="Enter Here...">
   <p class="item-name">Item Name:</p>

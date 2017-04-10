@@ -10,4 +10,6 @@ angular.module("RPC").controller("sellingController", function($scope, mainServi
   $scope.soldItem = function(item, ebayFees, shippingFees, otherFees, soldPrice){
     mainService.moveToSold(item, ebayFees, shippingFees, otherFees, soldPrice);
   }
+
+  $scope.status = mainService.status;
 })

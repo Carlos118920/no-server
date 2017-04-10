@@ -51,6 +51,8 @@ angular.module("RPC").controller("sellingController", function ($scope, mainServ
   $scope.soldItem = function (item, ebayFees, shippingFees, otherFees, soldPrice) {
     mainService.moveToSold(item, ebayFees, shippingFees, otherFees, soldPrice);
   };
+
+  $scope.status = mainService.status;
 });
 "use strict";
 
@@ -151,6 +153,11 @@ angular.module("RPC").service("mainService", function () {
 
   this.moveToSold = function (item, ebayFees, shippingFees, otherFees, soldPrice) {
     itemsSold.push({ id: item.id, name: item.name, investment: item.investment, ebayFees: ebayFees, shippingFees: shippingFees, otherFees: otherFees, soldPrice: soldPrice, payPalFees: (0.30 + soldPrice * 0.029).toFixed(2), grossProfit: (soldPrice - item.investment).toFixed(2), netProfit: (soldPrice - item.investment - ebayFees - shippingFees - otherFees - (0.30 + soldPrice * 0.029).toFixed(2)).toFixed(2) });
+    for (var i = 0; i < itemsForSale.length; i++) {
+      if (itemsForSale[i].id === item.id) {
+        itemsForSale.splice(i, 1);
+      }
+    }
   };
 });
 "use strict";
