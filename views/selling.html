@@ -1,0 +1,42 @@
+<div class="sellingSearch">
+  <h4>ITEMS FOR SALE</h4>
+  <input type="text" placeholder="Search..." ng-model="searchTerm">
+</div>
+<div class="row-container">
+  <div class="row" id="selling-labels">
+    <p class="itemID">ID</p>
+    <p class="item-name">NAME</p>
+    <p>COST</p>
+    <p class="fee">EBAY</p>
+    <p class="fee">SHIPPING</p>
+    <p class="fee">OTHER</p>
+    <p class="fee">SOLD</p>
+    <p id="selling-paypal-label">PAYPAL</p>
+    <p>GROSS</p>
+    <p>NET</p>
+  </div>
+</div>
+<div class="row-container">
+  <div class="row" ng-repeat="item in itemsForSale | filter: searchTerm">
+    <p class="itemID">#{{item.id}}</p>
+    <p class="item-name">{{item.name}}</p>
+    <p>${{item.investment}}</p>
+    <input ng-model ="ebayFees" type="text" placeholder="eBay Fees">
+    <input ng-model ="shippingFees" type="text" placeholder="Shipping Fees">
+    <input ng-model ="otherFees" type="text" placeholder="Other Fees">
+    <input ng-model ="soldPrice" type="text" placeholder="Sold Price">
+    <p class="selling-payPal-fees">${{soldPrice ? (0.30 + (soldPrice * 0.029)).toFixed(2) : 0}}</p>
+    <p>${{(soldPrice - item.investment).toFixed(2)}}</p>
+    <p>${{(soldPrice - item.investment - ebayFees - (soldPrice ? (0.30 + (soldPrice * 0.029)).toFixed(2) : 0) - shippingFees - otherFees).toFixed(2)}}</p>
+    <button class="sold-button" ng-click="soldItem()">SOLD</button>
+  </div>
+</div>
+<div class="sellingTotal">
+  <p class="itemID">ID Number:</p>
+  <input ng-model="idInput" type="text" placeholder="Enter Here...">
+  <p class="item-name">Item Name:</p>
+  <input ng-model="nameInput" type="text" placeholder="Enter Here...">
+  <p class="item-investment">Cost to Buy:</p>
+  <input ng-model="costInput" type="text" placeholder="Enter Here...">
+  <button class="add-item-button" ng-click="addNewItem()">ADD NEW ITEM</button>
+</div>

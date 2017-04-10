@@ -1,0 +1,31 @@
+<div class="sellingSearch">
+  <h4>SOLD ITEMS</h4>
+  <input type="text" placeholder="Search..." ng-model="searchTerm">
+</div>
+<div class="row-container">
+  <div class="row" ng-repeat="item in itemsSold | filter: searchTerm">
+    <p class="itemID">#{{item.id}}</p>
+    <p class="item-name">{{item.name}}</p>
+    <p>${{item.investment}}</p>
+    <p>${{item.ebayFees}}</p>
+    <p>${{item.payPalFees}}</p>
+    <p>${{item.shippingFees}}</p>
+    <p>${{item.otherFees}}</p>
+    <p>${{item.soldPrice}}</p>
+    <p>${{(item.soldPrice - item.investment).toFixed(2) }}</p>
+    <p>${{(item.soldPrice - item.investment - item.ebayFees - item.payPalFees - item.shippingFees - item.otherFees).toFixed(2)}}</p>
+    <button class="sold-button">EDIT</button>
+  </div>
+</div>
+<div class="sellingTotal">
+  <p class="itemID">ID</p>
+  <p class="item-name">Item</p>
+  <p class="item-investment">Cost</p>
+  <p class="selling-fees">Ebay Fees</p>
+  <p class="selling-fees">PayPal Fees</p>
+  <p class="selling-fees">Shipping Fees</p>
+  <p class="selling-fees">Other Fees</p>
+  <p>Gross Profit</p>
+  <p>Net Profit</p>
+  <p>Add to Sold</p>
+</div>

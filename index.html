@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" ng-app="RPC">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--RESET FILE-->
+    <link rel="stylesheet" href="./dist/styles.css">
+    <title>Reseller Profit Calculator</title>
+</head>
+<body ng-controller="mainController">
+  <main class="main-container">
+    <header class="head">
+      <div class="head-container">
+        <h1>Resellers Profit Calculator</h1>
+        <!-- if you need more points make this a directive template logo -->
+        <dollar class="dollar-icon-container" ng-click="getTotal()"></dollar>
+        <h2>Total Profit ${{total ? total : "???"}}</h2>
+      </div>
+    </header>
+
+    <nav class="nav-bar">
+      <h2 ui-sref="sold">SOLD ITEMS</h2>
+      <h2 ui-sref="selling">ITEMS FOR SALE</h2>
+      <h2 ui-sref="addExpense">ADD EXPENSES</h2>
+    </nav>
+
+    <ui-view></ui-view>
+
+    <footer class="foot">
+      <div class="footer-dash">
+        <p>CODED BY:</p>
+      </div>
+      <div class="footer-coin">
+        <p>$</p>
+      </div>
+      <div class="footer-dash">
+        <p>CARLOS</p>
+      </div>
+    </footer>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+  <script src="./dist/js/bundle.js" charset="utf-8"></script></script>
+</body>
+</html>

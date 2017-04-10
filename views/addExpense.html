@@ -1,0 +1,27 @@
+<div class="sellingSearch">
+  <h4>EXPENSES</h4>
+  <input type="text" placeholder="Search..." ng-model="searchTerm">
+</div>
+<div class="expense-row-container">
+  <div class="row" id="expense-labels">
+    <p class="expenseId">ID</p>
+    <p class="expenseName">NAME</p>
+    <p class="expenseCost">COST</p>
+  </div>
+</div>
+<div class="expense-row-container">
+  <div class="row" ng-repeat="item in expenses | filter: searchTerm">
+    <p class="expenseId">#{{item.id}}</p>
+    <p class="expenseName">{{item.name}}</p>
+    <p class="expenseCost">${{(item.cost).toFixed(2)}}</p>
+  </div>
+</div>
+<div class="expenseTotal">
+    <p class="expense-total-id">ID Nunber:</p>
+    <input ng-model="idInput" type="text" placeholder="Enter here...">
+    <p class="expense-total-item">Item Name:</p>
+    <input ng-model="nameInput" type="text" placeholder="Enter here...">
+    <p class="expense-total-cost">Cost to Buy:</p>
+    <input ng-model="costInput" type="text" placeholder="Enter here...">
+    <button ng-click="addExpense()" type="button">ADD EXPENSE</button>
+</div>

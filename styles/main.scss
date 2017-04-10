@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$primaryColor: rgb(35, 39, 100);
+$secondaryColor: rgb(80, 211, 182);
+
+
+html {
+  box-sizing: border-box;
+  font-family: 'PT Sans Narrow', sans-serif;
+  // background-image: url("http://allfreedesigns.com/wp-content/uploads/2013/01/cardboard-textures-5.jpg");
+  // background-position: center;
+  // background-size: cover;
+  letter-spacing: 1.5px;
+}
+*, *:before, *::after{
+  box-sizing: inherit;
+}
+
+.main-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.head{
+  width: 100%;
+  background: $primaryColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.head-container{
+  width: 80%;
+  display: flex;
+  background: $primaryColor;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+
+  h1{
+    font-size: 1em;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: $secondaryColor;
+    height: 50px;
+    width: 30%;
+    border-radius: 2em;
+    color: $primaryColor;
+  }
+
+  h2{
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $secondaryColor;
+    height: 50px;
+    width: 30%;
+    border-radius: 2em;
+    color: $primaryColor;
+  }
+}
+
+.dollar-icon-container{
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 120px;
+  color: $primaryColor;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+}
+
+.pulse{
+  animation: myAnimation 500ms ease-in-out 100ms 5;
+}
+
+@keyframes myAnimation {
+  0%{
+    height: 150px;
+    width: 150px;
+  }
+  50%{
+    height: 160px;
+    width: 160px;
+  }
+  100% {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+.nav-bar{
+  display: flex;
+  width: 80%;
+  margin: 20px 0px 15px 0px;
+  background: $primaryColor;
+  border-radius: 2em;
+  font-size: 22px;
+  color: white;
+
+  h2{
+    width: 50%;
+    padding: 10px;
+    height: 100%;
+    border-radius: 2em;
+    text-align: center;
+    color: white;
+    background: $primaryColor;
+    transition: color 500ms, background 500ms;
+  }
+  h2:hover{
+    background: $secondaryColor;
+    color: $primaryColor;
+  }
+
+}
+
+ui-view{
+  width: 80%;
+  height: 400px;
+  background: $primaryColor;
+  color: white;
+  border-radius: 1em;
+  position: relative;
+}
+
+[ui-sref]{
+  cursor: pointer;
+}
+
+.sellingSearch{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: $secondaryColor;
+  color: $primaryColor;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+
+  input[placeholder="Search..."]::-webkit-input-placeholder {
+    color: white;
+  }
+
+  input{
+    border-radius: 1em;
+    border-style: none;
+    padding-left: 30px;
+    padding-right: 5px;
+    background-image: url("http://www.spcadbn.org.za/img/searchbutton.png");
+    background-color: $primaryColor;
+    color: white;
+    background-position: left 10px top 3px;
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+  }
+}
+
+.row-container{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+
+  input{
+    height: 20px;
+    width: 70px;
+    margin: 6px;
+    border: 1px solid lightgray;
+    border-radius: 0.2em;
+  }
+
+  p{
+    width: 70px;
+    margin: 6px;
+  }
+
+  .selling-payPal-fees{
+    width: 45px;
+  }
+
+  .itemID{
+    width: 30px;
+  }
+
+  .item-name{
+    width: 180px;
+  }
+
+  .fee{
+    width: 70px;
+  }
+
+  .sold-button{
+    height: 20px;
+    width: 60px;
+    border: none;
+    border-radius: 0.5em;
+    background: $secondaryColor;
+    color: white;
+  }
+
+}
+
+.sellingTotal{
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+    background: $secondaryColor;
+    color: $primaryColor;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+
+    .add-item-button{
+      padding: 5px 15px 5px 15px;
+      border: none;
+      border-radius: 1em;
+      background: $primaryColor;
+      color: white;
+    }
+}
+
+#selling-paypal-label{
+  width: 45px;
+}
+
+#expense-labels{
+  font-size: 14px;
+}
+
+#selling-labels{
+  font-size: 14px;
+  margin-right: 60px;
+}
+
+.expenseTotal{
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+  justify-content: space-around;
+  padding: 10px;
+  background: $secondaryColor;
+  color: $primaryColor;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  button{
+    padding: 5px 15px 5px 15px;
+    border: none;
+    border-radius: 1em;
+    background: $primaryColor;
+    color: white;
+  }
+}
+
+.expense-row-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  .row{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    .expenseId{
+      width: 10%;
+    }
+    .expenseName{
+      width: 60%;
+    }
+    .expenseCost{
+      width: 10%;
+    }
+  }
+}
+
+.foot{
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $primaryColor;
+}
+
+.footer-dash{
+  height: 15px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  background: white;
+  border-radius: 2em;
+  color: $primaryColor;
+}
+
+.footer-coin{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-family: 'Roboto', sans-serif;
+  height: 40px;
+  width: 40px;
+  background: white;
+  color: $primaryColor;
+  border-radius: 50%;
+  margin: 10px;
+}
