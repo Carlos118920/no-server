@@ -153,6 +153,8 @@ ui-view {
   color: white;
   border-radius: 1em;
   position: relative; }
+  ui-view button {
+    cursor: pointer; }
 
 [ui-sref] {
   cursor: pointer; }
