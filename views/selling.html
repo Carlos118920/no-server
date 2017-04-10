@@ -28,7 +28,7 @@
     <p class="selling-payPal-fees">${{soldPrice ? (0.30 + (soldPrice * 0.029)).toFixed(2) : 0}}</p>
     <p>${{(soldPrice - item.investment).toFixed(2)}}</p>
     <p>${{(soldPrice - item.investment - ebayFees - (soldPrice ? (0.30 + (soldPrice * 0.029)).toFixed(2) : 0) - shippingFees - otherFees).toFixed(2)}}</p>
-    <button class="sold-button" ng-click="soldItem()">SOLD</button>
+    <button class="sold-button" ng-click="soldItem(item, ebayFees, shippingFees, otherFees, soldPrice)">SOLD</button>
   </div>
 </div>
 <div class="sellingTotal">

@@ -3,18 +3,31 @@
   <input type="text" placeholder="Search..." ng-model="searchTerm">
 </div>
 <div class="row-container">
+  <div class="row">
+    <p class="itemID">ID</p>
+    <p class="item-name">Name</p>
+    <p>Cost</p>
+    <p>eBay</p>
+    <p>Shipping</p>
+    <p>Other</p>
+    <p>Sold</p>
+    <p>Paypal</p>
+    <p>Gross</p>
+    <p>Net</p>
+  </div>
+</div>
+<div class="row-container">
   <div class="row" ng-repeat="item in itemsSold | filter: searchTerm">
     <p class="itemID">#{{item.id}}</p>
     <p class="item-name">{{item.name}}</p>
     <p>${{item.investment}}</p>
     <p>${{item.ebayFees}}</p>
-    <p>${{item.payPalFees}}</p>
     <p>${{item.shippingFees}}</p>
     <p>${{item.otherFees}}</p>
     <p>${{item.soldPrice}}</p>
+    <p>${{item.payPalFees}}</p>
     <p>${{(item.soldPrice - item.investment).toFixed(2) }}</p>
     <p>${{(item.soldPrice - item.investment - item.ebayFees - item.payPalFees - item.shippingFees - item.otherFees).toFixed(2)}}</p>
-    <button class="sold-button">EDIT</button>
   </div>
 </div>
 <div class="sellingTotal">

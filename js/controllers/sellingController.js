@@ -6,7 +6,8 @@ angular.module("RPC").controller("sellingController", function($scope, mainServi
     $scope.nameInput = "";
     $scope.costInput = "";
   }
-  $scope.soldItem = function(id){
-    mainService.moveToSold()
+
+  $scope.soldItem = function(item, ebayFees, shippingFees, otherFees, soldPrice){
+    mainService.moveToSold(item, ebayFees, shippingFees, otherFees, soldPrice);
   }
 })

@@ -82,12 +82,11 @@ this.total = function(){
   var sum = 0;
   var exp = 0;
   for(var i = 0; i < itemsSold.length; i++){
-    sum += itemsSold[i].netProfit;
+    sum += Number(itemsSold[i].netProfit);
   }
   for(var j = 0; j < expensesList.length; j++){
     exp += expensesList[j].cost;
   }
-  console.log(sum , exp)
   return (sum - exp).toFixed(2);
 }
 
@@ -96,12 +95,13 @@ this.addNewItem = function(id, name, cost){
 }
 
 this.addNewExpense = function(id, name, cost){
-  console.log(cost);
   expensesList.push({id: id, name: name, cost: Number(cost)});
-  console.log(expensesList);
 }
 
-this.moveToSold = function(){
-
+this.moveToSold = function(item, ebayFees, shippingFees, otherFees, soldPrice){
+  itemsSold.push({id: item.id, name: item.name, investment: item.investment, ebayFees: ebayFees, shippingFees: shippingFees, otherFees: otherFees, soldPrice: soldPrice, payPalFees: (0.30 + (soldPrice * 0.029)).toFixed(2), grossProfit: (soldPrice - item.investment).toFixed(2) , netProfit: (soldPrice - item.investment - ebayFees - shippingFees - otherFees - (0.30 + (soldPrice * 0.029)).toFixed(2)).toFixed(2)})
+  for(var i = 0; i < itemsForSale.length; i++){
+    
+  }
 }
 })
