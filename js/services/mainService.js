@@ -100,8 +100,5 @@ this.addNewExpense = function(id, name, cost){
 
 this.moveToSold = function(item, ebayFees, shippingFees, otherFees, soldPrice){
   itemsSold.push({id: item.id, name: item.name, investment: item.investment, ebayFees: ebayFees, shippingFees: shippingFees, otherFees: otherFees, soldPrice: soldPrice, payPalFees: (0.30 + (soldPrice * 0.029)).toFixed(2), grossProfit: (soldPrice - item.investment).toFixed(2) , netProfit: (soldPrice - item.investment - ebayFees - shippingFees - otherFees - (0.30 + (soldPrice * 0.029)).toFixed(2)).toFixed(2)})
-  for(var i = 0; i < itemsForSale.length; i++){
-    
-  }
 }
 })
